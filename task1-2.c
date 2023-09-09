@@ -7,9 +7,15 @@ int main()
     scanf("%i\n", &n);
     for (int i = 0; i != n; ++i)
         scanf("%i", &array[i]);
-    for (int j = n; j != 2 * n; ++j)
-        array[j] = array[j - n];
-    n = 2 * n;
+    int new, ind;
+    scanf("\n%i %i", &new, &ind);
+    if (ind < n)
+    {
+        for (int i = 1; i != n - ind + 1; ++i)
+            array[n - i + 1] = array[n - i];
+    }
+    array[ind] = new;
+    n += 1;
     for (int k = 0; k != n; ++k)
         printf("%i ", array[k]);
 }
